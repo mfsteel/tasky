@@ -53,7 +53,7 @@ jobs:
         ECR_REPOSITORY: ${{env.ECR_REPOSITORY}}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f tasky/Dockerfile .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
     - name: Update kube config
