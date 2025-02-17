@@ -6,7 +6,7 @@ on:
     branches: [ 'main' ]
 
 env:
-  ECR_REPOSITORY: prod-app
+  ECR_REPOSITORY: 748033149816.dkr.ecr.us-east-2.amazonaws.com/prod/app
   EKS_CLUSTER_NAME: testlab-cluster 
   AWS_REGION: us-east-2
 
