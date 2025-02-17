@@ -1,0 +1,29 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: kubernetes-demo-tasky-app
+  labels: 
+     app: tasky
+
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: tasky
+
+  template:
+    metadata:
+      labels:
+        app: tasky
+    spec:
+      containers:
+      - name: tasky
+        image: DOCKER_IMAGE
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
