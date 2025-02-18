@@ -6,7 +6,7 @@ metadata:
      app: tasky
 
 spec:
-  replicas: 1 
+  replicas: 2 
   selector:
     matchLabels:
       app: tasky
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: tasky
-        image: DOCKER_IMAGE
+        image: 748033149816.dkr.ecr.us-east-2.amazonaws.com/prod/app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
